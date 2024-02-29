@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-configuration>
+  <session-factory>
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hb_xml_commands</property>
+  <property name="hibernate.connection.username">root</property>
+  <property name="hibernate.connection.password">root</property>
+  
+  <!-- 1.create table in db and drop existing table -->
+  <!-- <property name="hibernate.hbm2ddl.auto">create</property> --> 
+ 
+ <!-- 2.update existing table if present otherwise create new table -->
+  <property name="hibernate.hbm2ddl.auto">update</property>  
+ 
+ <!-- 3.entity feilds and db columns matchen then data stored in db -->
+  <!--  <property name="hibernate.hbm2ddl.auto">validate</property> -->
+  
+  <!-- 4.create table and drop it once sf closed use for API testing -->
+<!--    <property name="hibernate.hbm2ddl.auto">create-drop</property>-->
+  
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQL55Dialect</property>
+  <property name="hibernate.show_sql">true</property>
+  
+  <mapping class="com.tech.entity.Student"></mapping>
+  </session-factory>
+</hibernate-configuration>
+
+<!-- use ctrl+shift+, for comment -->
